@@ -124,4 +124,5 @@ button {
     border-radius: 0.5rem;
     border: none;
     cursor: pointer;
+    height: 3rem;
 }
