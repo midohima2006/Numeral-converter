@@ -1,14 +1,20 @@
 :root {
     --body-bg: url(https://i.postimg.cc/RFHXJtXs/Whats-App-Image-2025-04-25-at-2-39-23-AM.jpg);
-    --ancient-bg-1: url(https://i.postimg.cc/rFYpNQGT/Whats-App-Image-2025-04-26-at-7-16-25-AM.png);
-    --ancient-bg-2: url(https://i.postimg.cc/MKRw17m3/small-bg.png);
+    --ancient-bg-1: url(https://i.postimg.cc/tRFhbQRS/bg-body.png);
+    --ancient-bg-2: url(https://i.postimg.cc/q7f1wc1g/small-bg.png);
     --font1: rgb(18, 3, 92);
+    --bg-head: url(https://i.postimg.cc/tJGW6DkN/bg-head.png);
+    --bg-body: url(https://i.postimg.cc/tRFhbQRS/bg-body.png);
+    --bg-foot: url(https://i.postimg.cc/mk3MyM6f/bg-foot.png);
+    --classic-font: romanesco, sans-serif;
+    --roman-font: noto serif, sans-serif;
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 html {
@@ -30,7 +36,7 @@ h1 {
     background: hsl(39, 93%, 17%);
     font-size: 3rem;
     text-align: center;
-    font-family: romanesco, sans-serif;
+    font-family: var(--classic-font);
     font-weight: 800;
     letter-spacing: 0.4rem;
     padding: 1rem;
@@ -38,42 +44,58 @@ h1 {
 
 h2 {
     font-size: 3rem;
-    font-family: romanesco, sans-serif;
+    font-family: var(--classic-font);
     letter-spacing: 0.3rem;
+}
+#head {
+    background: var(--bg-head);
+    background-size: 100% 100%;
+    width: 88%;
+    height: 12rem;
+}
+#foot {
+    background: var(--bg-foot);
+    background-size: 100% 100%;
+    width: 88%;
+    height: 12rem;
 }
 
 #history {
-    display: flex;
+    /*display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;*/
     background: var(--ancient-bg-1);
     background-size: 100% 100%;
-    width: 80%;
-    height: 150vh;
+    width: 88%;
+    /*height: 250vh;*/    
 }
 
 article {
-    width: 70%;
-    height: 65%;
+    /*width: 70%;
+    height: 65%;*/
     color: var(--font1);
+    margin: 1rem 15%;
 }
 
-p {
-    font-family: romanesco, sans-serif;
+.par {
+    font-family: var(--classic-font);
     letter-spacing: 0.1rem;
     font-size: 1.57rem;
     font-weight: 400;
     margin-left: 2rem
 }
 
-p:first-of-type::first-letter {
-    initial-letter: 2;
-    initial-letter-align: 0;
-    font-family: noto serif, sans-serif;
+.par:first-of-type::first-letter {
+    float: left;
+    position: absolute;
+    font-size: 3.5rem;
+    line-height: 0.8;
+    margin-right: 0.5rem;
+    font-family: var(--roman-font);
 }
 
 span {
-    font-family: noto serif, sans-serif;
+    font-family: var(--roman-font);
     font-weight: 800;
     letter-spacing: normal;
 }
@@ -82,24 +104,35 @@ span {
     background: var(--ancient-bg-2);
     background-size: 100% 100%;
     width: 70%;
-    height: 30vh;
+    max-height: 10rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: start;
     align-items: center;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    
+}
+form {
+    display: flex;
+    justify-content: space-between;
+    
+    
+    
 }
 
 label,
 input,
 button {
-    font-family: romanesco, sans-serif;
-    display: inline-block
+    font-family: var(--classic-font);
+    
 }
 
 label {
-    font-size: 3rem;
+    
+    font-size: 2rem;
     color: var(--font1);
-    margin-right: 1rem;
+    margin: 0.5rem 1rem 0 0;
 }
 
 input {
@@ -110,7 +143,7 @@ input {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     margin-right: 1rem;
-    width: 10rem;
+    width: 6rem;
     height: 3rem;
     text-align: center;
     padding-bottom: 1rem;
@@ -119,10 +152,16 @@ input {
 button {
     background: hsl(39, 93%, 17%);
     color: #d3d0d0;
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     border: none;
     cursor: pointer;
     height: 3rem;
+}
+#output {
+    display: block;
+    text-align: center;
+    font-family: var(--roman-font);   font-size: 2rem;
+    color: var(--font1);
 }

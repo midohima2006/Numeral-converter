@@ -1,0 +1,308 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Charis+SIL:ital,wght@0,400;0,700;1,400;1,700&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Romanesco&display=swap"
+        rel="stylesheet">
+    <meta name="description"
+        content="A simple tool that converts number from the Arabic mumeral system to the Roman numeral system.">
+    <meta name="keywords" content="converter, numeral, system, application, app, Arabic, Roman, numbers">
+    <meta name="author" content="midohima2006@gmail.com">
+    <meta name="robots" content="index, follow">
+    <title>Numeral Converter</title>
+</head>
+
+<body>
+    <h1>Arabic to Roman Numeral Converter</h1>
+    </section>
+    <section id="converter">
+        <label for="number-input">Enter an Arabic numeral:</label>
+        <form id="converter-form">
+            
+            <input type="number" id="number" name="arabic-number" required min="1" max="3999">
+            <button type="button" id="convert-btn">Convert</button>
+        </form>
+        <p id="output"></p>
+    </section>
+    <div id="head"></div>
+    <section id="history">
+        <article id="description">
+            <h2>A Journey Through Numerals</h2>
+            <p class="par">Throughout history, different civilizations have devised ingenious ways to represent numbers, each system
+                reflecting their unique culture and needs. Among the earliest and most influential were the <em>Roman
+                    numerals</em>, a system that originated in ancient Rome and dominated Europe for centuries. These
+                numerals, represented by combinations of letters like <span>I, V, X, L, C, D</span>, and <span>M</span>,
+                were practical for counting and basic arithmetic.</p>
+            <p class="par">In contrast, the <em>Arabic numeral system</em>, which we use today, with its ten digits
+                <strong>(0-9)</strong> and place value concept, revolutionized mathematics and science.</p>
+            <p class="par"> The adoption of <em>Arabic numerals</em>, with their inherent
+                efficiency and the power of <em>zero</em>, significantly advanced mathematics, science, and commerce across the
+                globe. Their clarity and ease of use ultimately led to their widespread adoption over other systems,
+                including <em>Roman numerals</em>.</p>
+            <p class="par">Today, we can appreciate the beauty and complexity of both systems. Roman numerals are often used in
+                specific contexts, such as clock faces, book chapters, and movie titles, while Arabic numerals dominate
+                everyday life, from simple calculations to advanced scientific research.</p>
+            <p class="par">Our converter allows you to easily convert Arabic numerals into their Roman equivalents. This tool is not
+                only practical but also a fun way to explore the historical significance of these two numeral systems.
+                Whether you're a student, a history enthusiast, or just curious about numbers, this converter provides a
+                simple and effective way to bridge the gap between these two fascinating systems.</p>
+            <p class="par">By entering an Arabic numeral, you can instantly see its Roman numeral counterpart. This feature is
+                particularly useful for students learning about Roman numerals or anyone interested in the historical
+                context of numbers.</p>
+        </article>
+    </section>
+    <div id="foot"></div>
+</body>
+<script src="script.js"></script>
+</html>
+
+** end of undefined **
+
+** start of undefined **
+
+const arabicNumber = document.getElementById("number");
+const convertBtn = document.getElementById("convert-btn");
+const output = document.getElementById("output");
+const guide = [
+    {value: 1000, rom: "M"},
+    {value: 900, rom: "CM"},
+    {value: 500, rom: "D"},
+    {value: 400, rom: "CD"},
+    {value: 100, rom: "C"},
+    {value: 90, rom: "XC"},
+    {value: 50, rom: "L"},
+    {value: 40, rom: "XL"},
+    {value: 10, rom: "X"},
+    {value: 9, rom: "IX"},
+    {value: 5, rom: "V"},
+    {value: 4, rom: "IV"},
+    {value: 1, rom: "I"},
+  ];
+  const convert = (num) => {
+    let roman ="";
+    guide.forEach((obj) => {
+      while (num >= obj.value) {
+        num -= obj.value;
+        roman += obj.rom;
+      };
+    });
+    return roman;
+  };
+  const errorMsg = (num) => {
+    const errors = [
+      {
+        name: "empty",
+        chk: num === "",
+        msg: "Please enter a valid number"
+      },
+      {
+        name: "belowLimit",
+        chk: !isNaN(num) && num <= 0,
+        msg: "Please enter a number greater than or equal to 1"
+      },
+      {
+        name: "overlimit",
+        chk: !isNaN(num) && num >= 4000,
+        msg: "Please enter a number less than or equal to 3999"
+      }
+    ];
+    let error = "";
+    for (let i = 0; i < errors.length; i++) {
+      if (errors[i].chk) {
+        error = errors[i].msg;
+        break;
+      };
+    };
+    return error
+  };
+  const checkInput = (num) => {
+    if (num === "" || num <= 0 || num >= 4000) {
+      return errorMsg(num);
+    } else {
+      return convert(Math.floor(num));
+    };
+  };
+  convertBtn.addEventListener("click", () => {
+    output.innerText = checkInput(arabicNumber.value);
+    
+  });
+
+** end of undefined **
+
+** start of undefined **
+
+:root {
+    --body-bg: url(https://i.postimg.cc/RFHXJtXs/Whats-App-Image-2025-04-25-at-2-39-23-AM.jpg);
+    --ancient-bg-1: url(https://i.postimg.cc/tRFhbQRS/bg-body.png);
+    --ancient-bg-2: url(https://i.postimg.cc/q7f1wc1g/small-bg.png);
+    --font1: rgb(18, 3, 92);
+    --bg-head: url(https://i.postimg.cc/tJGW6DkN/bg-head.png);
+    --bg-body: url(https://i.postimg.cc/tRFhbQRS/bg-body.png);
+    --bg-foot: url(https://i.postimg.cc/mk3MyM6f/bg-foot.png);
+    --classic-font: romanesco, sans-serif;
+    --roman-font: noto serif, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background: var(--body-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    overflow:  hidden auto;
+}
+
+h1 {
+    color: #d3d0d0;
+    width: 100vw;
+    background: hsl(39, 93%, 17%);
+    font-size: 3rem;
+    text-align: center;
+    font-family: var(--classic-font);
+    font-weight: 800;
+    letter-spacing: 0.4rem;
+    padding: 1rem;
+}
+
+h2 {
+    font-size: 3rem;
+    font-family: var(--classic-font);
+    letter-spacing: 0.3rem;
+}
+#head {
+    background: var(--bg-head);
+    background-size: 100% 100%;
+    width: 88%;
+    height: 12rem;
+}
+#foot {
+    background: var(--bg-foot);
+    background-size: 100% 100%;
+    width: 88%;
+    height: 12rem;
+}
+
+#history {
+    /*display: flex;
+    justify-content: center;
+    align-items: center;*/
+    background: var(--ancient-bg-1);
+    background-size: 100% 100%;
+    width: 88%;
+    /*height: 250vh;*/    
+}
+
+article {
+    /*width: 70%;
+    height: 65%;*/
+    color: var(--font1);
+    margin: 1rem 15%;
+}
+
+.par {
+    font-family: var(--classic-font);
+    letter-spacing: 0.1rem;
+    font-size: 1.57rem;
+    font-weight: 400;
+    margin-left: 2rem
+}
+
+.par:first-of-type::first-letter {
+    initial-letter: 2;
+    initial-letter-align: 0;
+    font-family: var(--roman-font);
+}
+
+span {
+    font-family: var(--roman-font);
+    font-weight: 800;
+    letter-spacing: normal;
+}
+
+#converter {
+    background: var(--ancient-bg-2);
+    background-size: 100% 100%;
+    width: 70%;
+    max-height: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    
+}
+form {
+    display: flex;
+    justify-content: space-between;
+    
+    
+    
+}
+
+label,
+input,
+button {
+    font-family: var(--classic-font);
+    
+}
+
+label {
+    
+    font-size: 2rem;
+    color: var(--font1);
+    margin: 0.5rem 1rem 0 0;
+}
+
+input {
+    font-size: 2rem;
+    color: ivory;
+    background: hsl(39, 93%, 17%);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    margin-right: 1rem;
+    width: 6rem;
+    height: 3rem;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+button {
+    background: hsl(39, 93%, 17%);
+    color: #d3d0d0;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    height: 3rem;
+}
+#output {
+    display: block;
+    text-align: center;
+    font-family: var(--roman-font);   font-size: 2rem;
+    color: var(--font1);
+}
+
+** end of undefined **
+

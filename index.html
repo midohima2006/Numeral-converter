@@ -11,8 +11,8 @@
         href="https://fonts.googleapis.com/css2?family=Charis+SIL:ital,wght@0,400;0,700;1,400;1,700&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Romanesco&display=swap"
         rel="stylesheet">
     <meta name="description"
-        content="A simple numerical converter application that converts Arabic numerals into its Roman equivalents.">
-    <meta name="keywords" content="converter, numerical, application, web app, Arabic, Roman, Hindi, numbers">
+        content="A simple tool that converts number from the Arabic mumeral system to the Roman numeral system.">
+    <meta name="keywords" content="converter, numeral, system, application, app, Arabic, Roman, numbers">
     <meta name="author" content="midohima2006@gmail.com">
     <meta name="robots" content="index, follow">
     <title>Numeral Converter</title>
@@ -22,45 +22,42 @@
     <h1>Arabic to Roman Numeral Converter</h1>
     </section>
     <section id="converter">
-
+        <label for="number-input">Enter an Arabic numeral:</label>
         <form id="converter-form">
-            <label for="number-input">Enter an Arabic numeral:</label>
-            <input type="number" id="number-input" name="arabic-number" required min="1" max="3999">
-            <button type="button" id="convertbtn">Convert</button>
+            
+            <input type="number" id="number" name="arabic-number" required min="1" max="3999">
+            <button type="button" id="convert-btn">Convert</button>
         </form>
-        <p id="result"></p>
+        <p id="output"></p>
     </section>
-
+    <div id="head"></div>
     <section id="history">
         <article id="description">
             <h2>A Journey Through Numerals</h2>
-            <p>Throughout history, different civilizations have devised ingenious ways to represent numbers, each system
+            <p class="par">Throughout history, different civilizations have devised ingenious ways to represent numbers, each system
                 reflecting their unique culture and needs. Among the earliest and most influential were the <em>Roman
                     numerals</em>, a system that originated in ancient Rome and dominated Europe for centuries. These
                 numerals, represented by combinations of letters like <span>I, V, X, L, C, D</span>, and <span>M</span>,
                 were practical for counting and basic arithmetic.</p>
-            <p>In contrast, the <em>Arabic numeral system</em>, which we use today, was developed in India and later
-                transmitted to the Islamic world and then to Europe. This system, with its ten digits
+            <p class="par">In contrast, the <em>Arabic numeral system</em>, which we use today, with its ten digits
                 <strong>(0-9)</strong> and place value concept, revolutionized mathematics and science.</p>
-            <p>Arab scholars played a crucial role in refining and popularizing these Indian numerals, which are why
-                they became known in the West as Arabic numerals. The adoption of Arabic numerals, with their inherent
-                efficiency and the power of zero, significantly advanced mathematics, science, and commerce across the
+            <p class="par"> The adoption of <em>Arabic numerals</em>, with their inherent
+                efficiency and the power of <em>zero</em>, significantly advanced mathematics, science, and commerce across the
                 globe. Their clarity and ease of use ultimately led to their widespread adoption over other systems,
-                including Roman numerals.</p>
-            <p>Today, we can appreciate the beauty and complexity of both systems. Roman numerals are often used in
+                including <em>Roman numerals</em>.</p>
+            <p class="par">Today, we can appreciate the beauty and complexity of both systems. Roman numerals are often used in
                 specific contexts, such as clock faces, book chapters, and movie titles, while Arabic numerals dominate
                 everyday life, from simple calculations to advanced scientific research.</p>
-            <p>Our converter allows you to easily convert Arabic numerals into their Roman equivalents. This tool is not
+            <p class="par">Our converter allows you to easily convert Arabic numerals into their Roman equivalents. This tool is not
                 only practical but also a fun way to explore the historical significance of these two numeral systems.
                 Whether you're a student, a history enthusiast, or just curious about numbers, this converter provides a
-                simple and effective way to bridge the gap between these two fascinating worlds.</p>
-            <p>By entering an Arabic numeral, you can instantly see its Roman numeral counterpart. This feature is
+                simple and effective way to bridge the gap between these two fascinating systems.</p>
+            <p class="par">By entering an Arabic numeral, you can instantly see its Roman numeral counterpart. This feature is
                 particularly useful for students learning about Roman numerals or anyone interested in the historical
                 context of numbers.</p>
-            <p>Explore the fascinating world of numbers with our converter, and discover how these systems have shaped
-                our understanding of mathematics and culture.</p>
         </article>
-
+    </section>
+    <div id="foot"></div>
 </body>
-
+<script src="script.js"></script>
 </html>
