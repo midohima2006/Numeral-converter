@@ -58,7 +58,7 @@ const errorMsg = (num) => {
   return error;
 };
 const checkInput = (userInput) => {
-  const input = Number(arabicNumber.value.replace(/\^d/g, ""));
+  const input = Number(arabicNumber.value.replace(/\D/g, ""));
   const showError = errorMsg(input);
   if (showError) {
     return showError;
