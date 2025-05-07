@@ -33,8 +33,8 @@ const convert = (num) => {
 const errorMsg = (num) => {
   const errors = [
     {
-      name: "empty",
-      chk: num === "",
+      name: "invalid",
+      chk: num === "" || isNaN(num),
       msg: "Please enter a valid number",
     },
     {
@@ -57,26 +57,28 @@ const errorMsg = (num) => {
   }
   return error;
 };
-const checkInput = (num) => {
-  if (errorMsg(num)) {
-    return errorMsg(num);
+const checkInput = (userInput) => {
+  const input = Number(arabicNumber.value.replace(/\^d/g, ""));
+  const showError = errorMsg(input);
+  if (showError) {
+    return showError;
   } else {
-    return convert(Math.floor(num));
+    return convert(Math.floor(input));
   }
 };
 convertBtn.addEventListener("click", () => {
-  output.innerText = checkInput(arabicNumber.value);
+  output.innerText = checkInput();
 });
 
 arabicNumber.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     e.preventDefault();
-    output.innerText = checkInput(arabicNumber.value);
+    output.innerText = checkInput();
   }
 });
 
 arabicNumber.addEventListener("change", () => {
-  output.innerText = checkInput(arabicNumber.value);
+  output.innerText = checkInput();
 });
 
 arabicNumber.addEventListener("focus", () => {
