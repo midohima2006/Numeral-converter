@@ -106,7 +106,7 @@ span {
     background: var(--ancient-bg-2);
     background-size: 100% 100%;
     width: 70%;
-    max-height: 10rem;
+   
     display: flex;
     flex-direction: column;
     justify-content: start;
