@@ -186,7 +186,7 @@ footer {
 
 #developer {
     width: 100%;
-    font-size: 1rem;
+    font-size: 2rem;
     text-align: center;
     margin: 0 auto;
 }
@@ -209,7 +209,7 @@ footer {
 }
 
 .contact-method {
-    margin: 0 1rem;
+    margin: 0 2rem;
 }
 
 .fa-solid,
@@ -218,4 +218,9 @@ footer {
 .contact-text {
     display: inline-block;
     color: #d3d0d0;
+<<<<<<< HEAD
     font-size: 1rem;
+=======
+    font-size: 2rem;
+   
+>>>>>>> 87affbb5669466efade3cd3d4b98e236e9f2be3c
