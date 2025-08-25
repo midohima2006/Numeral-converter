@@ -2,7 +2,7 @@
     --body-bg: url(https://i.postimg.cc/P56cmg0g/IMG-20250512-WA0001.jpg);
     --ancient-bg-1: url(https://i.postimg.cc/tRFhbQRS/bg-body.png);
     --ancient-bg-2: url(https://i.postimg.cc/q7f1wc1g/small-bg.png);
-    --font1: rgb(214, 9, 43);
+    --font1: rgb(9, 1, 109);
     --bg-head: url(https://i.postimg.cc/tJGW6DkN/bg-head.png);
     --bg-foot: url(https://i.postimg.cc/mk3MyM6f/bg-foot.png);
     --classic-font: romanesco, sans-serif;
@@ -62,9 +62,7 @@ h2 {
 }
 
 #history {
-    /*display: flex;
-    justify-content: center;
-    align-items: center;*/
+    
     background: var(--ancient-bg-1);
     background-size: 100% 100%;
     width: 88%;
@@ -72,8 +70,7 @@ h2 {
 }
 
 article {
-    /*width: 70%;
-    height: 65%;*/
+    text-align: justify;
     color: var(--font1);
     margin: 1rem 15%;
 }
